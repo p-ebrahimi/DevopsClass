@@ -1,0 +1,15 @@
+#!/bin/bash
+
+ServerIp=$1
+UserName=$2
+PassWord=$3
+
+ping -c 1 $ServerIp >> /dev/null
+
+if [ $? -eq 0 ]; then
+    sshpass -p "$PassWord" scp -o StrictHostKeyChecking=no /etc/passwd $UserName@$ServerIp:~
+    echo "It's done"
+    #scp $UserName@$ServerIp:/etc/passwd /home/parisa
+else
+    echo "The server is not accessible!"
+fi
