@@ -1,0 +1,17 @@
+#!/bin/bash
+
+read -p "please enter a number: " NUMBER1
+largest=$NUMBER1
+
+for i in {2..20}; do
+    read -p "please enter a number: " NUMBER
+    if [ $NUMBER -ge $NUMBER1 ]; then
+        smallest=$largest
+        largest=$NUMBER
+    elif [ $NUMBER -lt $NUMBER1 ]; then
+        smallest=$NUMBER
+    fi
+done
+
+echo "The largest number is: $largest"
+echo "The smallest number is: $smallest"
