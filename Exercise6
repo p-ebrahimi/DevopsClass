@@ -1,0 +1,13 @@
+# Installbelow package 
+Sudo apt install sysbanner
+
+vim /home/parisa/.profile
+add ‘banner "Welcome ${USER}"’ to end of the file  ~  echo "Welcome $(whoami)"
+
+# Shows number of login users and their names
+who --count
+# OR
+who | awk '{print $1}' | sort -u | wc -l
+
+# Shows date
+echo `date +\%Y-\%m-\%d
