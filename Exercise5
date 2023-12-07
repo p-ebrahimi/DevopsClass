@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cat /etc/passwd | cut -d":" -f 1,3 > /home/parisa/testpasswd/test-passwd_`date +%Y%m%d`
+
+find /home/parisa/testpasswd -name test-passwd_* -ctime +2 -delete
